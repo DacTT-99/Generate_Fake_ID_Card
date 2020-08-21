@@ -3,11 +3,11 @@ import os
 import cv2
 import glob
 
-data_path = '/home/list_99/Python/Generate_Fake_ID_Card'
+data_path = './'
 crop_avatar = [0.29,0.95,0,0.33]
 crop_info = [0.24,0.99,0.31,0.99]
-size_avatar =(128,128)
-size_info = (256,256)
+size_avatar =(128,192)
+size_info = (384,384)
 
 def get_image(data_path):
     files = []
@@ -43,7 +43,7 @@ if __name__=='__main__':
     avatar,lable_avatar = data_processor(crop_avatar,size_avatar)
     info, lable_info = data_processor(crop_info,size_info)
 
-    np.save('feature_avatar.npy',avatar)
-    np.save('feature_info.npy',info)
-    np.save('label_ava.npy',lable_avatar)
-    np.save('lable_info.npy',lable_info)
+    np.save('./feature_avatar.npy',avatar)
+    np.save('./feature_info.npy',info)
+    np.save('./lable_ava.npy',lable_avatar)
+    np.save('./lable_info.npy',lable_info)

@@ -4,21 +4,21 @@ import cv2
 import numpy as np
 from PIL import Image,ImageFont,ImageDraw,ImageFilter,ImageEnhance,ImageOps
 #%%
-font1 = ImageFont.truetype('/home/list_99/Python/Generate_Fake_ID_card/font/Roboto-Bold.ttf',size=18)
-font2 = ImageFont.truetype('/home/list_99/Python/Generate_Fake_ID_card/font/Inter-Medium-slnt=0.ttf',size=19)
-font3 = ImageFont.truetype('/home/list_99/Python/Generate_Fake_ID_card/font/Roboto-Medium.ttf',size=25)
-font4 = ImageFont.truetype('/home/list_99/Python/Generate_Fake_ID_card/font/Roboto-Medium.ttf',size=19)
-font5 = ImageFont.truetype('/home/list_99/Python/Generate_Fake_ID_card/font/Inter-Medium-slnt=0.ttf',size=14)
+font1 = ImageFont.truetype('./font/Roboto-Bold.ttf',size=18)
+font2 = ImageFont.truetype('./font/Inter-Medium-slnt=0.ttf',size=19)
+font3 = ImageFont.truetype('./font/Roboto-Medium.ttf',size=25)
+font4 = ImageFont.truetype('./font/Roboto-Medium.ttf',size=19)
+font5 = ImageFont.truetype('./font/Inter-Medium-slnt=0.ttf',size=14)
 
 
-pattern_file_path = '/home/list_99/Python/Generate_Fake_ID_card/front.jpg'
-avatar_file_path = '/home/list_99/Python/Generate_Fake_ID_card/avatar'
-firstname_file_path = '/home/list_99/Python/Generate_Fake_ID_card/name/firstname.txt'
-middlename_file_path = '/home/list_99/Python/Generate_Fake_ID_card/name/middlename.txt'
-lastname_file_path = '/home/list_99/Python/Generate_Fake_ID_card/name/lastname.txt'
-commune_file_path = '/home/list_99/Python/Generate_Fake_ID_card/address/commune.txt'
-district_file_path = '/home/list_99/Python/Generate_Fake_ID_card/address/district.txt'
-province_file_path = '/home/list_99/Python/Generate_Fake_ID_card/address/province.txt'
+pattern_file_path = './front.jpg'
+avatar_file_path = './avatar'
+firstname_file_path = './name/firstname.txt'
+middlename_file_path = './name/middlename.txt'
+lastname_file_path = './name/lastname.txt'
+commune_file_path = './address/commune.txt'
+district_file_path = './address/district.txt'
+province_file_path = './address/province.txt'
 
 n=53
 
@@ -68,5 +68,5 @@ for x in range(200):
     if random.randint(0,1) == 0:
         ava = ava.transpose(Image.FLIP_LEFT_RIGHT)
     img.paste(ava,(28,143+random.randint(-3,3)))
-    #img.save('/home/list_99/Python/Generate_Fake_ID_card/fake/fake{}.jpg'.format(x))
-    img.show()
+    img.save('./fake/fake{}.jpg'.format(x))
+    #img.show()
