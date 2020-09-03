@@ -4,3 +4,9 @@ feature_avatar.npy
 feature_info.npy
 lable_ava.npy
 lable_info.npy
+/pattern
+generate_fake2.py
+predict.py
+/fake
+/fake1
+/origin

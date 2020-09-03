@@ -3,11 +3,11 @@ import os
 import cv2
 import glob
 
-data_path = '/home/list_99/Python/Generate_Fake_ID_Card'
+data_path = './'
 crop_avatar = [0.29,0.95,0,0.33]
 crop_info = [0.24,0.99,0.31,0.99]
-size_avatar =(128,128)
-size_info = (256,256)
+size_avatar =(128,192)
+size_info = (384,384)
 
 def get_image(data_path):
     files = []
@@ -24,7 +24,7 @@ def get_image(data_path):
     return files, label
 
 def data_processor(crop,size):
-    image_list ,lable  = get_image(data_path)
+    image_list ,label  = get_image(data_path)
     print('{} training images in {}'.format(len(image_list),data_path))
     image_list = np.array(image_list)
     images = []
@@ -37,13 +37,13 @@ def data_processor(crop,size):
         ava = cv2.resize(ava,size)
         images.append(ava)
         
-    return np.array(images),np.array(lable)
+    return np.array(images),np.array(label)
 
 if __name__=='__main__':
-    avatar,lable_avatar = data_processor(crop_avatar,size_avatar)
-    info, lable_info = data_processor(crop_info,size_info)
+    avatar,label_avatar = data_processor(crop_avatar,size_avatar)
+    info, label_info = data_processor(crop_info,size_info)
 
-    np.save('feature_avatar.npy',avatar)
-    np.save('feature_info.npy',info)
-    np.save('label_ava.npy',lable_avatar)
-    np.save('lable_info.npy',lable_info)
+    np.save('./feature_avatar.npy',avatar)
+    np.save('./feature_info.npy',info)
+    np.save('./label_ava.npy',label_avatar)
+    np.save('./label_info.npy',label_info)
