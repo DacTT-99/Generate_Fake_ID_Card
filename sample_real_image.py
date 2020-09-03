@@ -12,10 +12,10 @@ samples_per_img = num_fake_sample//num_orig_img
 origin_path = './origin'
 train_path = './train'
 valid_path = './valid'
-train_au_path = os.join(train_path,'au')
-train_tp_path = os.join(train_path,'tp')
-valid_au_path = os.join(valid_path,'au')
-valid_tp_path = os.join(valid_path,'tp')
+train_au_path = os.path.join(train_path,'au')
+train_tp_path = os.path.join(train_path,'tp')
+valid_au_path = os.path.join(valid_path,'au')
+valid_tp_path = os.path.join(valid_path,'tp')
 
 num_orig_img = len(os.listdir(origin_path))
 def sample_random(save_path,img, num_samples, prefix,counter):
@@ -37,10 +37,10 @@ def sample_random(save_path,img, num_samples, prefix,counter):
     for i in range(num_samples):
         x = np.random.randint(0, row-64)
         y = np.random.randint(0, col-64)
-        cv2.imwrite(save_path+'{}_au_{}.png'.format(prefix,counter*num_samples + i),img[y:y+64,x:x+64,:3])
+        cv2.imwrite(save_path+'/{}_au_{}.png'.format(prefix,counter*num_samples + i),img[y:y+64,x:x+64,:3])
 
 def main():
-    fns = get_image('origin_path')
+    fns = get_image(origin_path)
     y = np.array([0]*len(fns))
     fns_train ,fns_valid,_,_=train_test_split(fns,y,test_size=0.2,stratify=y)
     for idx,fn in enumerate(fns_train):
