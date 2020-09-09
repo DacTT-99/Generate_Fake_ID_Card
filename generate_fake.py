@@ -1,27 +1,27 @@
 #%%
 import random
-
+import os
 import cv2
 import numpy as np
 from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont,
                  ImageOps)
-
+rootpath = '/home/list_99/Python/Generate_Fake_ID_Card'
 #%%
-font1 = ImageFont.truetype('./font/Roboto-Bold.ttf',size=18)
-font2 = ImageFont.truetype('./font/Inter-Medium-slnt=0.ttf',size=19)
-font3 = ImageFont.truetype('./font/Roboto-Medium.ttf',size=25)
-font4 = ImageFont.truetype('./font/Roboto-Medium.ttf',size=19)
-font5 = ImageFont.truetype('./font/Inter-Medium-slnt=0.ttf',size=14)
+font1 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Bold.ttf'),size=18)
+font2 = ImageFont.truetype(os.path.join(rootpath,'./font/Inter-Medium-slnt=0.ttf'),size=19)
+font3 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Medium.ttf'),size=25)
+font4 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Medium.ttf'),size=19)
+font5 = ImageFont.truetype(os.path.join(rootpath,'./font/Inter-Medium-slnt=0.ttf'),size=14)
 
 
-pattern_file_path = './front.jpg'
-avatar_file_path = './avatar'
-firstname_file_path = './name/firstname.txt'
-middlename_file_path = './name/middlename.txt'
-lastname_file_path = './name/lastname.txt'
-commune_file_path = './address/commune.txt'
-district_file_path = './address/district.txt'
-province_file_path = './address/province.txt'
+pattern_file_path = os.path.join(rootpath,'./front.jpg')
+avatar_file_path = os.path.join(rootpath,'./avatar')
+firstname_file_path = os.path.join(rootpath,'./name/firstname.txt')
+middlename_file_path = os.path.join(rootpath,'./name/middlename.txt')
+lastname_file_path = os.path.join(rootpath,'./name/lastname.txt')
+commune_file_path = os.path.join(rootpath,'./address/commune.txt')
+district_file_path = os.path.join(rootpath,'./address/district.txt')
+province_file_path = os.path.join(rootpath,'./address/province.txt')
 
 n=53
 generate_mask = True
@@ -90,8 +90,8 @@ for x in range(200):
     ava_mask = 255 * np.ones((size[1],size[0]))
     ava_mask = Image.fromarray(ava_mask)
     mask.paste(ava_mask,(28,143+random.randint(-3,3)))
-    img.save('./fake/fake{}.jpg'.format(x))
-    mask.save('./fake/fake{}.mask.png'.format(x))
+    img.save(os.path.join(rootpath,'./fake/fake{}.jpg'.format(x)))
+    mask.save(os.path.join(rootpath,'./fake/fake{}.mask.png'.format(x)))
     #img.show()
     #mask.show()
 # %%

@@ -9,3 +9,4 @@ generate_fake2.py
 predict.py
 /fake
 /fake1
+/.env
