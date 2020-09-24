@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 from sample_fake_image import get_image
 
-rootpath = '/home/list_99/Python/Generate_Fake_ID_Card'
+rootpath = os.path.dirname(__file__) 
 origin_path = os.path.join(rootpath,'./origin')
 num_fake_sample = 170000
 num_orig_img = len(os.listdir(origin_path))

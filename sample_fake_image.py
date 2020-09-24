@@ -4,13 +4,14 @@ import random
 import cv2
 import numpy as np
 from sklearn.model_selection import train_test_split
-rootpath = '/home/list_99/Python/Generate_Fake_ID_Card'
+rootpath = os.path.dirname(__file__)
 fake_path = os.path.join(rootpath,'./fake')
 
 
 def get_image(path):
     '''
     Get all filename in a direction
+    
     Parameter
     ---------
     path:str, path to direction
@@ -80,12 +81,10 @@ def main():
     for idx,fn in enumerate(fns_train):
         img = cv2.imread(fn + '.jpg')
         mask = cv2.imread(fn + '.mask.png',0)
-        print(len(sample_fake(img,mask)[0]))
         for s in sample_fake(img,mask)[0]:
             cv2.imwrite(os.path.join(rootpath,'./train/tp/train_tp_{}.png'.format(counter)),s)
             counter+=1
-    print('number of fake samples for training: {}'.format(counter))
-
+    print('number of fake samples for training : {}'.format(counter))
     counter = 0
     for idx,fn in enumerate(fns_valid):
         img = cv2.imread(fn + '.jpg')
@@ -93,7 +92,7 @@ def main():
         for s in sample_fake(img,mask)[0]:
             cv2.imwrite(os.path.join(rootpath,'./valid/tp/valid_tp_{}.png'.format(counter)),s)
             counter+=1
-    print('number of real samples for training: {}'.format(counter))
+    print('number of fake samples for validation :{}'.format(counter))
     print('done')
 
 if __name__ == '__main__':

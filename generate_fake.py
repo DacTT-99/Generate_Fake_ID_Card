@@ -1,12 +1,11 @@
-#%%
-import random
 import os
+import random
+
 import cv2
 import numpy as np
-from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont,
-                 ImageOps)
-rootpath = '/home/list_99/Python/Generate_Fake_ID_Card'
-#%%
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont,ImageOps
+
+rootpath = os.path.dirname(__file__)
 font1 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Bold.ttf'),size=18)
 font2 = ImageFont.truetype(os.path.join(rootpath,'./font/Inter-Medium-slnt=0.ttf'),size=19)
 font3 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Medium.ttf'),size=25)
@@ -38,8 +37,7 @@ origin = Image.open(pattern_file_path)
 
 for x in range(200):
     img = origin.copy()
-    mask = np.zeros([img.size[1],img.size[0]])
-    mask = Image.fromarray(mask,'L')
+    mask = Image.new('L',img.size,0)
     rand = random.randint(0,32)
     ava = Image.open(avatar_file_path+'/avatar'+str(rand)+'.jpg')
 
@@ -90,8 +88,8 @@ for x in range(200):
     ava_mask = 255 * np.ones((size[1],size[0]))
     ava_mask = Image.fromarray(ava_mask)
     mask.paste(ava_mask,(28,143+random.randint(-3,3)))
-    img.save(os.path.join(rootpath,'./fake/fake{}.jpg'.format(x)))
-    mask.save(os.path.join(rootpath,'./fake/fake{}.mask.png'.format(x)))
+    img.save(os.path.join(rootpath,'./fake/style1_fake{}.jpg'.format(x)))
+    mask.save(os.path.join(rootpath,'./fake/style1_fake{}.mask.png'.format(x)))
     #img.show()
     #mask.show()
 # %%
