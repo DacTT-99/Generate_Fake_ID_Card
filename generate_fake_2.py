@@ -69,7 +69,7 @@ def main():
                 img , mask = generate(img,mask)
 
             img.save(os.path.join(rootpath,'fake/style2_fake{}.jpg'.format(counter)))
-            mask.save(os.path.join(rootpath,'fake/style2_fake{}.mask.jpg'.format(counter)))
+            mask.save(os.path.join(rootpath,'fake/style2_fake{}.mask.png'.format(counter)))
             counter += 1
     print('{} images was generated'.format(counter))
 
