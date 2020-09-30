@@ -63,7 +63,7 @@ def sample_fake(img, mask):
             fake_point = count_fake_point(mask[y_start + rand_y:y_start + kernel_size + rand_y, x_start+rand_x:x_start + kernel_size + rand_x])
             if((img[y_start+rand_y:y_start + kernel_size + rand_y, x_start+rand_x:x_start + kernel_size + rand_x, :3].shape[0]+img[y_start+rand_y:y_start + kernel_size + rand_y, x_start+rand_x:x_start + kernel_size + rand_x, :3].shape[1])!=128):
                 continue
-            if (fake_point > 100) and (kernel_size * kernel_size - fake_point > threshold):
+            if (fake_point > 500) and (kernel_size * kernel_size - fake_point > threshold):
                 samples.append(img[y_start+rand_y:y_start + kernel_size + rand_y, x_start+rand_x:x_start + kernel_size + rand_x, :3])
                 coordinates.append((x_start,y_start))
     return samples,coordinates
