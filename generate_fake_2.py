@@ -68,10 +68,10 @@ def main():
             for j in range(num - 1):
                 img , mask = generate(img,mask)
 
-            img.save(os.path.join(rootpath,'./fake/style2_fake{}.jpg'.format(counter)))
-            mask.save(os.path.join(rootpath,'./fake/style2_fake{}.mask.jpg'.format(counter)))
+            img.save(os.path.join(rootpath,'fake/style2_fake{}.jpg'.format(counter)))
+            mask.save(os.path.join(rootpath,'fake/style2_fake{}.mask.jpg'.format(counter)))
             counter += 1
     print('{} images was generated'.format(counter))
-    
+
 if __name__=='__main__':
     main()

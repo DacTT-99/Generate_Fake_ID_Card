@@ -88,8 +88,8 @@ for x in range(200):
     ava_mask = 255 * np.ones((size[1],size[0]))
     ava_mask = Image.fromarray(ava_mask)
     mask.paste(ava_mask,(28,143+random.randint(-3,3)))
-    img.save(os.path.join(rootpath,'./fake/style1_fake{}.jpg'.format(x)))
-    mask.save(os.path.join(rootpath,'./fake/style1_fake{}.mask.png'.format(x)))
+    img.save(os.path.join(rootpath,'fake/style1_fake{}.jpg'.format(x)))
+    mask.save(os.path.join(rootpath,'fake/style1_fake{}.mask.png'.format(x)))
     #img.show()
     #mask.show()
 # %%

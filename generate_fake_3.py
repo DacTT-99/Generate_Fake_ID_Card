@@ -46,7 +46,6 @@ def generate(img,mask=None):
     
     img.paste(maskOfRoi,(i,j),maskOfRoi)
     mask.paste(maskOfRoi,(i,j),maskOfRoi)
-    print('a')
     return img,mask
 
 def main():
@@ -59,8 +58,8 @@ def main():
             for j in range(n-1):
                 img,mask = generate(img,mask)
             
-            img.save(os.path.join(rootpath,'./fake/style3_fake{}.png'.format(counter)))
-            mask.save(os.path.join(rootpath,'./fake/style3_fake{}.mask.png'.format(counter)))
+            img.save(os.path.join(rootpath,'fake/style3_fake{}.jpg'.format(counter)))
+            mask.save(os.path.join(rootpath,'fake/style3_fake{}.mask.jpg'.format(counter)))
             counter += 1
     print('{} images was generated'.format(counter))
 if __name__=='__main__':
