@@ -7,13 +7,13 @@ from sklearn.model_selection import train_test_split
 from sample_fake_image import get_image
 
 rootpath = os.path.dirname(__file__) 
-origin_path = os.path.join(rootpath,'./origin')
+origin_path = os.path.join(rootpath,'origin')
 num_fake_sample = 170000
 num_orig_img = len(os.listdir(origin_path))
 samples_per_img = num_fake_sample//num_orig_img
 
-train_path = os.path.join(rootpath,'./train')
-valid_path = os.path.join(rootpath,'./valid')
+train_path = os.path.join(rootpath,'train')
+valid_path = os.path.join(rootpath,'valid')
 train_au_path = os.path.join(train_path,'au')
 train_tp_path = os.path.join(train_path,'tp')
 valid_au_path = os.path.join(valid_path,'au')

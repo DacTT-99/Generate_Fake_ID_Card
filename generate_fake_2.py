@@ -8,12 +8,12 @@ import random
 rootpath = os.path.dirname(__file__)
 
 # file path to dir of origin image used to generate fake image
-dirpath = os.path.join(rootpath,'origin')
+dirpath = os.path.join(rootpath,'originForGenerateFake')
 
 # all image filenames to generated fake image
 filenames = os.listdir(dirpath)
 
-N = 10 # number of fake image generated form 1 real image
+N = 5 # number of fake image generated form 1 real image
 num = 3 # number of operation 
 def generate(img,mask=None):
     '''

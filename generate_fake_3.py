@@ -8,13 +8,13 @@ import random
 rootpath = os.path.dirname(__file__)
 
 # file path to dir of origin image used to generate fake image
-dirpath = os.path.join(rootpath,'origin')
+dirpath = os.path.join(rootpath,'originForGenerateFake')
 
 # all image filenames to generated fake image
 filenames = os.listdir(dirpath)
 
-N=10
-n=4
+N=5
+n=3
 def generate(img,mask=None):
     '''
     Create a new image by randomly pasting a blank space to origin image

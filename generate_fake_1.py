@@ -6,21 +6,21 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont,ImageOps
 
 rootpath = os.path.dirname(__file__)
-font1 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Bold.ttf'),size=18)
-font2 = ImageFont.truetype(os.path.join(rootpath,'./font/Inter-Medium-slnt=0.ttf'),size=19)
-font3 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Medium.ttf'),size=25)
-font4 = ImageFont.truetype(os.path.join(rootpath,'./font/Roboto-Medium.ttf'),size=19)
-font5 = ImageFont.truetype(os.path.join(rootpath,'./font/Inter-Medium-slnt=0.ttf'),size=14)
+font1 = ImageFont.truetype(os.path.join(rootpath,'font/Roboto-Bold.ttf'),size=18)
+font2 = ImageFont.truetype(os.path.join(rootpath,'font/Inter-Medium-slnt=0.ttf'),size=19)
+font3 = ImageFont.truetype(os.path.join(rootpath,'font/Roboto-Medium.ttf'),size=25)
+font4 = ImageFont.truetype(os.path.join(rootpath,'font/Roboto-Medium.ttf'),size=19)
+font5 = ImageFont.truetype(os.path.join(rootpath,'font/Inter-Medium-slnt=0.ttf'),size=14)
 
 
-pattern_file_path = os.path.join(rootpath,'./front.jpg')
-avatar_file_path = os.path.join(rootpath,'./avatar')
-firstname_file_path = os.path.join(rootpath,'./name/firstname.txt')
-middlename_file_path = os.path.join(rootpath,'./name/middlename.txt')
-lastname_file_path = os.path.join(rootpath,'./name/lastname.txt')
-commune_file_path = os.path.join(rootpath,'./address/commune.txt')
-district_file_path = os.path.join(rootpath,'./address/district.txt')
-province_file_path = os.path.join(rootpath,'./address/province.txt')
+pattern_file_path = os.path.join(rootpath,'front.jpg')
+avatar_file_path = os.path.join(rootpath,'avatar')
+firstname_file_path = os.path.join(rootpath,'name/firstname.txt')
+middlename_file_path = os.path.join(rootpath,'name/middlename.txt')
+lastname_file_path = os.path.join(rootpath,'name/lastname.txt')
+commune_file_path = os.path.join(rootpath,'address/commune.txt')
+district_file_path = os.path.join(rootpath,'address/district.txt')
+province_file_path = os.path.join(rootpath,'address/province.txt')
 
 n=53
 generate_mask = True
